@@ -1,0 +1,9 @@
+set terminal pngcairo enhanced color lw 1.5 font 'Times Roman'
+set xrange [0:210]
+set yrange [0:1]
+set output "rtt.png"
+set xlabel "Time (sec)"
+set ylabel "rtt"
+set key right top vertical
+plot "rrtt.dat" using 1:2 title "rrtt" with lines lw 1.5 lc 'blue', \
+     "rtt.dat" using 1:2 title "rtt" with lines lw 1.5 lc 'red'
